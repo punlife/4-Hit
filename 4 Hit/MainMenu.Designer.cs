@@ -48,6 +48,7 @@
             this.helpButton.Size = new System.Drawing.Size(75, 33);
             this.helpButton.TabIndex = 5;
             this.helpButton.Text = "Help";
+            this.helpButton.Visible = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             this.helpButton.MouseEnter += new System.EventHandler(this.helpButton_MouseEnter);
             this.helpButton.MouseLeave += new System.EventHandler(this.helpButton_MouseLeave);

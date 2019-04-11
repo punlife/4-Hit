@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio;
 using NAudio.Wave;
+using System.IO;
+using System.Reflection;
 
 namespace _4_Hit
 {
@@ -18,7 +20,8 @@ namespace _4_Hit
     {
 
         IWavePlayer waveOutDevice = new WaveOut();
-        AudioFileReader audioFileReader = new AudioFileReader("1-01-virtue-s-last-reward-orchestra-.mp3");
+
+        AudioFileReader audioFileReader = new AudioFileReader(System.Environment.CurrentDirectory + "\\Resources\\virtues-last-reward-orchestra.wav");
         private PrivateFontCollection fonts = new PrivateFontCollection();
         private Point lastLocation;
         private bool mouseDown;        
@@ -75,9 +78,13 @@ namespace _4_Hit
         //Form Progression
         private void startButton_Click(object sender, EventArgs e)
         {
-            Form1 game = new Form1(waveOutDevice, Location.X, Location.Y);
-            game.Tag = this;
-            game.Show(this);
+            //Form1 game = new Form1(waveOutDevice, Location.X, Location.Y);
+            //game.Tag = this;
+            //game.Show(this);
+            //Hide();
+            HelpScreen help = new HelpScreen(waveOutDevice, Location.X, Location.Y);
+            help.Tag = this;
+            help.Show(this);
             Hide();
         }
         private void helpButton_Click(object sender, EventArgs e)

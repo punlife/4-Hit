@@ -16,7 +16,7 @@ namespace _4_Hit
     public partial class Form1 : Form
     {
         IWavePlayer waveOutDevice;
-        AudioFileReader audioFileReader = new AudioFileReader("23-digital-root.mp3");
+        AudioFileReader audioFileReader = new AudioFileReader(System.Environment.CurrentDirectory + "\\Resources\\digital-root.wav");
         private Point lastLocation;
         private bool mouseDown;
         private bool status = false;
